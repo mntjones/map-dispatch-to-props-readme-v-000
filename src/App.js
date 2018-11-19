@@ -33,5 +33,7 @@ const mapStateToProps = (state) => {
 //   };
 // };
 
+// these ALL work, depending on whether you have the functions written out or not
 // export default connect(mapStateToProps, { addItem })(App);
-export default connect(state => ({ items: state.items }), { addItem })(App);
+// export default connect(state => ({ items: state.items }), { addItem })(App);
+export default connect(state => ({ items: state.items }))(App);
