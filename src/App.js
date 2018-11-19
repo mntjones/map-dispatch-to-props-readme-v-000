@@ -12,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <button onClick={this.handleOnClick(event)}>
+        <button onClick={this.handleOnClick}>
           Click
           </button>
         <p>{this.props.items.length}</p>
@@ -27,4 +27,10 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = dispatch => {
+  return {
+    addItem: () => {dispatch(addItem())};
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
